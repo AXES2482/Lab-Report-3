@@ -12,7 +12,7 @@ class Student(object):
 
     def getName(self):
         """Returns the student's name."""
-        self.name
+        return self.name
 
     def setScore(self, i, score):
         """Resets the ith score, counting from 1."""
@@ -59,21 +59,30 @@ class Student(object):
 
 def main():
     """Tests sorting."""
-    # Create the list and put 5 students into it
+    num_students = int(input("Enter the number of students: "))
+    num_scores = int(input("Enter the number of scores per student: "))
+
     lyst = []
-    for count in reversed(range(5)):
-        s = Student("Name" + str(count + 1), 10)
-        lyst.append(s)
-    # shuffle list
+    for _ in range(num_students):
+        name = input("Enter the student's name: ")
+        student = Student(name, num_scores)
+        for i in range(1, num_scores + 1):
+            score = int(input(f"Enter score {i} for {name}: "))
+            student.setScore(i, score)
+        lyst.append(student)
+
+    # Shuffle list
     random.shuffle(lyst)
-    # display the list
-    print("Unsorted list of students:")
+
+    # Display the unsorted list
+    print("\nUnsorted list of students:")
     for s in lyst:
         print(s)
 
-    # sort the list
+    # Sort the list
     lyst.sort()
-    # display the list
+
+    # Display the sorted list
     print("\nSorted list of students:")
     for s in lyst:
         print(s)
