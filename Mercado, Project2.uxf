@@ -1,0 +1,16 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>260</x><y>60</y><w>210</w><h>300</h></coordinates><panel_attributes>Student
+--
+- name : string
+- scores : int [ ]
+--
++ Student(): 
++ Student(string,int ): 
++ getName(): string
++ setScore(int, int): void
++ getScore(int): int 
++ getAverage(): float 
++ getHighScore(): int 
++ __eq__(self, student): 
++ __ge__ (self, student): 
++ __lt__ (self, student): 
++ __str__ (self):</panel_attributes><additional_attributes></additional_attributes></element></diagram>
